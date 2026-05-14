@@ -23,8 +23,7 @@
             </div>
         </div>
         <div class="px-6 py-3 bg-slate-50 flex items-center justify-between border-t border-slate-100">
-            <a href="/TFC_DAW/public/index.php?action=reservar&id=<?= $r['id_restaurante'] ?>"
-               class="bg-sky-500 text-white px-4 py-1.5 rounded-lg text-sm hover:bg-sky-600 transition font-medium">
+            <a href="/TFC_DAW/controllers/ReservaController.php?action=crear&id=<?= $r['id_restaurante'] ?>" class="bg-sky-500 text-white px-4 py-1.5 rounded-lg text-sm hover:bg-sky-600 transition font-medium">
                 Reservar
             </a>
             <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'admin'): ?>

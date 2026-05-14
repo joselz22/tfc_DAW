@@ -15,18 +15,18 @@ if ($action === 'login') {
         $_SESSION['rol']     = $usuario['rol'];
         $_SESSION['id']      = $usuario['id_usuario'];
 
-        if ($usuario['rol'] === 'admin') {
+        // Redirigir a donde quería ir o al inicio según rol
+        if (isset($_SESSION['redirect_after_login'])) {
+            $redirect = $_SESSION['redirect_after_login'];
+            unset($_SESSION['redirect_after_login']);
+            header("Location: $redirect");
+        } elseif ($usuario['rol'] === 'admin') {
             header("Location: /TFC_DAW/admin/index.php");
         } else {
             header("Location: /TFC_DAW/index.php");
         }
         exit;
-    } else {
-        $_SESSION['error_login'] = "Email o contraseña incorrectos.";
-        header("Location: /TFC_DAW/views/auth/login.php");
-        exit;
     }
-
 } elseif ($action === 'registro') {
     $nombre   = $_POST['nombre'];
     $email    = $_POST['email'];
@@ -56,7 +56,6 @@ if ($action === 'login') {
         header("Location: /TFC_DAW/views/auth/registro.php");
         exit;
     }
-
 } elseif ($action === 'logout') {
     session_destroy();
     header("Location: /TFC_DAW/index.php");

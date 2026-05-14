@@ -41,5 +41,7 @@
     </div>
 </footer>
 </div>
+<script src="/TFC_DAW/public/js/main.js"></script>
 </body>
+
 </html>

@@ -13,37 +13,32 @@
             </div>
         <?php endif; ?>
 
-        <form action="/TFC_DAW/controllers/AuthController.php?action=registro" method="POST" class="space-y-5">
+        <form id="form-registro" action="/TFC_DAW/controllers/AuthController.php?action=registro" method="POST" class="space-y-5">
+
+            <div id="errores-registro"
+                class="hidden bg-red-50 border border-red-200 text-red-700 rounded-lg px-4 py-3 text-sm">
+            </div>
 
             <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
-                <input type="text" name="nombre" required placeholder="Tu nombre"
-                       class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <input id="nombre" type="text" name="nombre" required placeholder="Tu nombre" class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
             </div>
-
             <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                <input type="email" name="email" required placeholder="tu@email.com"
-                       class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <input id="email" type="email" name="email" required placeholder="tu@email.com" class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
             </div>
-
             <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">Contraseña</label>
-                <input type="password" name="password" required placeholder="Mínimo 6 caracteres"
-                       class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <input id="password" type="password" name="password" required placeholder="Mínimo 6 caracteres" class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
             </div>
-
             <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">Confirmar contraseña</label>
-                <input type="password" name="confirm" required placeholder="Repite tu contraseña"
-                       class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <input id="confirm" type="password" name="confirm" required placeholder="Repite tu contraseña" class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
             </div>
 
-            <button type="submit"
-                    class="w-full bg-blue-800 text-white py-2 rounded-lg hover:bg-blue-900 transition font-semibold">
+            <button type="submit" class="w-full bg-blue-800 text-white py-2 rounded-lg hover:bg-blue-900 transition font-semibold">
                 Crear cuenta
             </button>
-
         </form>
 
         <p class="text-center text-sm text-gray-500 mt-6">

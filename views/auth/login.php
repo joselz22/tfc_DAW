@@ -12,7 +12,12 @@
                 <?php unset($_SESSION['error_login']); ?>
             </div>
         <?php endif; ?>
-
+        <?php if (isset($_SESSION['aviso_login'])): ?>
+            <div class="bg-blue-50 border border-blue-200 text-blue-700 rounded-lg px-4 py-3 mb-5 text-sm">
+                <?= $_SESSION['aviso_login'] ?>
+                <?php unset($_SESSION['aviso_login']); ?>
+            </div>
+        <?php endif; ?>
         <?php if (isset($_SESSION['exito_registro'])): ?>
             <div class="bg-green-50 border border-green-200 text-green-700 rounded-lg px-4 py-3 mb-5 text-sm">
                 <?= $_SESSION['exito_registro'] ?>
@@ -25,17 +30,17 @@
             <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
                 <input type="email" name="email" required placeholder="usuario@email.com"
-                       class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
             </div>
 
             <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">Contraseña</label>
                 <input type="password" name="password" required placeholder="••••••••"
-                       class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    class="w-full border border-slate-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
             </div>
 
             <button type="submit"
-                    class="w-full bg-blue-800 text-white py-2 rounded-lg hover:bg-blue-900 transition font-semibold">
+                class="w-full bg-blue-800 text-white py-2 rounded-lg hover:bg-blue-900 transition font-semibold">
                 Entrar
             </button>
 
